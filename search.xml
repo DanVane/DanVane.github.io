@@ -43,7 +43,41 @@
 
  <p>把每个排序看做一个自然数，则所有排列对应的数可按从小到大的顺序排列，从当前的排列产生下一个排列时则必然造成某一位置上的数字变大，这一位置显然应该尽量靠右，并且在它左边位置上的数字保持不变。这就意味着这一位置变成的数字来自于它的右边，并且变大的幅度要尽可能小，也就是说在它右边如有几个数同时比它大，应该用其中最小的来代替它。由于这一位置是满足上述条件的最右边的一位，所以在它右边的所有数字按逆序排列，即在这些数字的右边没有一个大于它的数.程序中先从右至左找到第一个位置,该位置上的数比它右边的数小，这个位置就是所要找的满足上述条件的位置, 然后再从右到左找到第一个比该位置上的数字大的数字所在的位置,将这两个位置上的数字交换,再将该位置右边的所有元素颠倒过来,即将它们按从小到大的顺序排列,就得到了下一个排列.</p> 
 
-<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><h3 id="判断是否符合题目要求"><a href="#判断是否符合题目要求" class="headerlink" title="判断是否符合题目要求"></a>判断是否符合题目要求</h3><pre><code>private String judge_Sum(int[] res, int size) {
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><pre><code>private void recursion_algo(int max, int min, int size) {
+    if (max - min + 1 != size * size) {
+        System.out.println(&quot;not correct numbers!!!&quot;);
+        return;
+    }
+    List&lt;Integer&gt; res = new ArrayList&lt;Integer&gt;();
+    List&lt;Integer&gt; re = new ArrayList&lt;Integer&gt;();
+    for (int i = min; i &lt;= max; i++) {
+        res.add(i);
+    }
+    res = recursion(res, re);
+
+}
+
+private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&gt; re) {
+    if (res.size() == 1) {
+        re.add(res.get(0));
+        System.out.println(re.toString());
+        re.remove(re.size() - 1);
+    } else {
+        for (int i = 0; i &lt; res.size(); i++) {
+            re.add(res.get(i));
+            List&lt;Integer&gt; tmp_res = new ArrayList&lt;Integer&gt;();
+            for (Integer num : res) {
+                tmp_res.add(num);
+
+            }
+            tmp_res.remove(i);
+            recursion(tmp_res, re);
+            re.remove(re.size() - 1);
+        }
+    }
+    return null;
+}
+</code></pre><h3 id="判断是否符合题目要求"><a href="#判断是否符合题目要求" class="headerlink" title="判断是否符合题目要求"></a>判断是否符合题目要求</h3><pre><code>private String judge_Sum(int[] res, int size) {
     String str = &quot;&quot;;
     int[] sum = new int[size * 2 + 2];
     int[][] solu = new int[size][size];
