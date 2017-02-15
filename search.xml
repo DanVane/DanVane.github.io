@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title><![CDATA[穷举搜索]]></title>
-      <url>https://danvane.github.io/2017/02/14/%E7%A9%B7%E4%B8%BE%E6%90%9C%E7%B4%A2/</url>
+      <title><![CDATA[穷举]]></title>
+      <url>https://danvane.github.io/2017/02/14/%E7%A9%B7%E4%B8%BE/</url>
       <content type="html"><![CDATA[<h1 id="《算法谜题》1-1-1穷举搜索"><a href="#《算法谜题》1-1-1穷举搜索" class="headerlink" title="《算法谜题》1.1.1穷举搜索"></a>《算法谜题》1.1.1穷举搜索</h1><p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p><br><a id="more"></a><br><br>### 幻方：<br><br><p>试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。</p>
 
-<p><img src="/2017/02/14/穷举搜索/exhaustivity.PNG" alt="img"></p>
+<p><img src="/2017/02/14/穷举/exhaustivity.PNG" alt=""></p>
 <h3 id="穷举"><a href="#穷举" class="headerlink" title="穷举"></a>穷举</h3><pre>
 <code>
 private int[] get_Res(int[] res) {
