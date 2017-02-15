@@ -11,7 +11,7 @@
 <p><img src="/2017/02/14/穷举/exhaustivity.PNG" alt=""></p>
 <h3 id="穷举"><a href="#穷举" class="headerlink" title="穷举"></a>穷举</h3><pre>
 <code>
-private int[] get_Res(int[] res) {
+    private int[] get_Res(int[] res) {
         // if no_change, return null;
         int l_flag = 0;
         int r_flag = res.length - 1;
