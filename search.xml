@@ -48,7 +48,7 @@ private String judge_Sum(int[] res, int size) {
         String str = "";
         int[] sum = new int[size * 2 + 2];
         int[][] solu = new int[size][size];
-        // 判断，打印结果
+
         for (int j = 0; j < size; j++) {
             for (int k = 0; k < size; k++) {
                 solu[j][k] = res[j * size + k];
@@ -56,7 +56,7 @@ private String judge_Sum(int[] res, int size) {
         }
         sum[2 * size] = 0;
         sum[2 * size + 1] = 0;
-        for (int j = 1; j <= size;="" j++)="" {="" sum[j="" -="" 1]="0;" sum[size="" +="" j="" sum[2="" *="" size]="" 1][j="" 1];="" size="" 1][size="" j];="" for="" (int="" k="0;" <="" k++)="" 1][k];="" }="" sum.length;="" if="" (sum[j="" !="sum[j])" return="" "";="" str="" ;="" "\t";="" str;="" code="">
+        for (int j = 1; j <= size;j++)="" {="" sum[j-1]="0;" sum[size+="" j="" -="" 1]="0;" sum[2="" *="" size]="" +="solu[j" 1][j="" 1];="" size="" 1][size="" j];="" for="" (int="" k="0;" <="" size;="" k++)="" sum[j="" 1][k];="" sum[size="" }="" sum.length;="" j++)="" if="" (sum[j="" !="sum[j])" return="" "";="" str="" ;="" "\t";="" str;="" code="">
 </=></code></pre>
 
 <p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>

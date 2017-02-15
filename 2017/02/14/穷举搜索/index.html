@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://danvane.github.io/2017/02/14/穷举搜索/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
 <meta property="og:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。">
-<meta property="og:updated_time" content="2017-02-14T14:40:56.540Z">
+<meta property="og:updated_time" content="2017-02-14T14:45:04.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="穷举搜索">
 <meta name="twitter:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。">
@@ -349,7 +349,7 @@ private String judge_Sum(int[] res, int size) {
         String str = "";
         int[] sum = new int[size * 2 + 2];
         int[][] solu = new int[size][size];
-        // 判断，打印结果
+
         for (int j = 0; j < size; j++) {
             for (int k = 0; k < size; k++) {
                 solu[j][k] = res[j * size + k];
@@ -357,7 +357,7 @@ private String judge_Sum(int[] res, int size) {
         }
         sum[2 * size] = 0;
         sum[2 * size + 1] = 0;
-        for (int j = 1; j <= size;="" j++)="" {="" sum[j="" -="" 1]="0;" sum[size="" +="" j="" sum[2="" *="" size]="" 1][j="" 1];="" size="" 1][size="" j];="" for="" (int="" k="0;" <="" k++)="" 1][k];="" }="" sum.length;="" if="" (sum[j="" !="sum[j])" return="" "";="" str="" ;="" "\t";="" str;="" code="">
+        for (int j = 1; j <= size;j++)="" {="" sum[j-1]="0;" sum[size+="" j="" -="" 1]="0;" sum[2="" *="" size]="" +="solu[j" 1][j="" 1];="" size="" 1][size="" j];="" for="" (int="" k="0;" <="" size;="" k++)="" sum[j="" 1][k];="" sum[size="" }="" sum.length;="" j++)="" if="" (sum[j="" !="sum[j])" return="" "";="" str="" ;="" "\t";="" str;="" code="">
 </=></code></pre>
 
 <p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>
@@ -372,7 +372,7 @@ private String judge_Sum(int[] res, int size) {
         <p><span>本文标题:</span><a href="/2017/02/14/穷举搜索/">穷举搜索</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DanVane</a></p>
         <p><span>发布时间:</span>2017-02-14, 15:47:26</p>
-        <p><span>最后更新:</span>2017-02-14, 22:40:56</p>
+        <p><span>最后更新:</span>2017-02-14, 22:45:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/14/穷举搜索/" title="穷举搜索">https://danvane.github.io/2017/02/14/穷举搜索/</a>
             <span class="copy-path" data-clipboard-text="原文: https://danvane.github.io/2017/02/14/穷举搜索/　　作者: DanVane" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
