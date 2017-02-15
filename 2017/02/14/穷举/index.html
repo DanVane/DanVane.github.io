@@ -15,17 +15,23 @@
 
 
 
-<meta name="description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。">
+<meta name="description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+
+幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="穷举">
+<meta property="og:title" content="穷举 Exhaustive search">
 <meta property="og:url" content="https://danvane.github.io/2017/02/14/穷举/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
-<meta property="og:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。">
+<meta property="og:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+
+幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta property="og:image" content="https://danvane.github.io/2017/02/14/穷举/exhaustivity.PNG">
-<meta property="og:updated_time" content="2017-02-15T07:32:30.134Z">
+<meta property="og:updated_time" content="2017-02-15T07:58:19.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="穷举">
-<meta name="twitter:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。">
+<meta name="twitter:title" content="穷举 Exhaustive search">
+<meta name="twitter:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+
+幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta name="twitter:image" content="https://danvane.github.io/2017/02/14/穷举/exhaustivity.PNG">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -58,7 +64,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>穷举 | DanVane的小弄弄</title>
+<title>穷举 Exhaustive search | DanVane的小弄弄</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -284,7 +290,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      穷举
+      穷举 Exhaustive search
     </h1>
   
 
@@ -293,7 +299,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法谜题/">算法谜题</a>
+    <a class="article-category-link" href="/categories/Algorithmic-Puzzles《算法谜题》/">Algorithmic Puzzles《算法谜题》</a>
     </div>
 
 
@@ -309,8 +315,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="《算法谜题》1-1-1穷举搜索"><a href="#《算法谜题》1-1-1穷举搜索" class="headerlink" title="《算法谜题》1.1.1穷举搜索"></a>《算法谜题》1.1.1穷举搜索</h1><p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p><br><a id="more"></a><br><br>### 幻方：<br><br><p>试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。</p>
+        <h1 id="《算法谜题》1-1-1穷举搜索"><a href="#《算法谜题》1-1-1穷举搜索" class="headerlink" title="《算法谜题》1.1.1穷举搜索"></a>《算法谜题》1.1.1穷举搜索</h1><p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p>
 
+<h3 id="幻方："><a href="#幻方：" class="headerlink" title="幻方："></a>幻方：</h3><p>试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。</p>
+
+<a id="more"></a>
 <p><img src="/2017/02/14/穷举/exhaustivity.PNG" alt=""></p>
 <h3 id="穷举"><a href="#穷举" class="headerlink" title="穷举"></a>穷举</h3><pre>
 <code>
@@ -423,12 +432,12 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/14/穷举/">穷举</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/14/穷举/">穷举 Exhaustive search</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DanVane</a></p>
         <p><span>发布时间:</span>2017-02-14, 15:47:26</p>
-        <p><span>最后更新:</span>2017-02-15, 15:32:30</p>
+        <p><span>最后更新:</span>2017-02-15, 15:58:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/14/穷举/" title="穷举">https://danvane.github.io/2017/02/14/穷举/</a>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/14/穷举/" title="穷举 Exhaustive search">https://danvane.github.io/2017/02/14/穷举/</a>
             <span class="copy-path" data-clipboard-text="原文: https://danvane.github.io/2017/02/14/穷举/　　作者: DanVane" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -440,6 +449,12 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/02/15/backtracking/">
+                    回溯 backtracking
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -456,7 +471,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《算法谜题》1-1-1穷举搜索"><span class="toc-number">1.</span> <span class="toc-text">《算法谜题》1.1.1穷举搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#穷举"><span class="toc-number">1.0.1.</span> <span class="toc-text">穷举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-number">1.0.2.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断是否符合题目要求"><span class="toc-number">1.0.3.</span> <span class="toc-text">判断是否符合题目要求</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《算法谜题》1-1-1穷举搜索"><span class="toc-number">1.</span> <span class="toc-text">《算法谜题》1.1.1穷举搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#幻方："><span class="toc-number">1.0.1.</span> <span class="toc-text">幻方：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#穷举"><span class="toc-number">1.0.2.</span> <span class="toc-text">穷举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-number">1.0.3.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断是否符合题目要求"><span class="toc-number">1.0.4.</span> <span class="toc-text">判断是否符合题目要求</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -492,7 +507,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"穷举　| DanVane的小弄弄　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"穷举 Exhaustive search　| DanVane的小弄弄　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -508,7 +523,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/14/穷举/" data-title="穷举" data-url="https://danvane.github.io/2017/02/14/穷举/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/14/穷举/" data-title="穷举 Exhaustive search" data-url="https://danvane.github.io/2017/02/14/穷举/"></div>
     <script>
         var duoshuoQuery = {short_name:"danvane"};
         var loadComment = function(){
@@ -531,7 +546,9 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/02/15/backtracking/" title="上一篇: 回溯 backtracking">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -543,7 +560,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
 
 
 
