@@ -26,7 +26,7 @@
 
 幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta property="og:image" content="https://danvane.github.io/2017/02/14/穷举/exhaustivity.PNG">
-<meta property="og:updated_time" content="2017-02-15T07:58:19.538Z">
+<meta property="og:updated_time" content="2017-02-15T08:14:19.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="穷举 Exhaustive search">
 <meta name="twitter:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
@@ -423,7 +423,12 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
         }
         str+=&quot;\n&quot;;
     }
-</code></pre><p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>
+</code></pre><p>穷举搜索的两个主要困难：</p>
+<ol>
+<li>产生所有可能解的机制。 本文中幻方的可能解会形成一种具备良好结构的集合——全排列。但是有许多问题，可能解无法形成具有规则结构的集合。</li>
+<li>需要生成和处理的可能解数量。一般，该集合的规模会随着问题规模呈指数增长。所以，穷举搜索只能再规模很小的情况下可行。</li>
+</ol>
+<p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>
 
       
     </div>
@@ -435,7 +440,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
         <p><span>本文标题:</span><a href="/2017/02/14/穷举/">穷举 Exhaustive search</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DanVane</a></p>
         <p><span>发布时间:</span>2017-02-14, 15:47:26</p>
-        <p><span>最后更新:</span>2017-02-15, 15:58:19</p>
+        <p><span>最后更新:</span>2017-02-15, 16:14:19</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/14/穷举/" title="穷举 Exhaustive search">https://danvane.github.io/2017/02/14/穷举/</a>
             <span class="copy-path" data-clipboard-text="原文: https://danvane.github.io/2017/02/14/穷举/　　作者: DanVane" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
