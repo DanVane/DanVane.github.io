@@ -2762,10 +2762,46 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #ddd;
+  background: #ba8f6c;
 }
 .tagcloud a.color0::before {
-  border-right-color: #ddd;
+  border-right-color: #ba8f6c;
+}
+.tagcloud a.color1 {
+  background: #ff945c;
+}
+.tagcloud a.color1::before {
+  border-right-color: #ff945c;
+}
+.tagcloud a.color2 {
+  background: #7b5d5f;
+}
+.tagcloud a.color2::before {
+  border-right-color: #7b5d5f;
+}
+.tagcloud a.color3 {
+  background: #f5c7b7;
+}
+.tagcloud a.color3::before {
+  border-right-color: #f5c7b7;
+}
+.tagcloud a.color4 {
+  background: #cfb7c4;
+}
+.tagcloud a.color4::before {
+  border-right-color: #cfb7c4;
+}
+.tagcloud a.color5 {
+  background: #918597;
+}
+.tagcloud a.color5::before {
+  border-right-color: #918597;
+}
+.tagcloud a.color6 {
+  background: #bc8f8f;
+}
+.tagcloud a.color6::before {
+  border-right-color: #bc8f8f;
 }
 .tagcloud a:hover {
   opacity: 1;
