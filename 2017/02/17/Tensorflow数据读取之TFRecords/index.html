@@ -15,12 +15,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="DanVane的小弄弄">
-<meta property="og:url" content="https://danvane.github.io/tags/情感/index.html">
+<meta name="description" content="tensorflow内定标准格式TFRecordsTFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。
+TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow生成TFRecords">
+<meta property="og:url" content="https://danvane.github.io/2017/02/17/Tensorflow数据读取之TFRecords/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
+<meta property="og:description" content="tensorflow内定标准格式TFRecordsTFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。
+TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter">
+<meta property="og:updated_time" content="2017-02-17T08:41:30.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DanVane的小弄弄">
+<meta name="twitter:title" content="Tensorflow生成TFRecords">
+<meta name="twitter:description" content="tensorflow内定标准格式TFRecordsTFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。
+TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -50,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 情感 | DanVane的小弄弄</title>
+<title>Tensorflow生成TFRecords | DanVane的小弄弄</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -60,9 +67,9 @@
         fancybox: true,
         animate: false,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -253,60 +260,259 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Tensorflow数据读取之TFRecords" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/09/28/雨/" class="archive-article-date">
-      <time datetime="2016-09-28T01:26:04.000Z" itemprop="datePublished">09-28</time>
+    <div class="article-meta">
+      <a href="/2017/02/17/Tensorflow数据读取之TFRecords/" class="article-date">
+      <time datetime="2017-02-17T08:17:56.000Z" itemprop="datePublished">2017-02-17</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/28/雨/">雨</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Tensorflow生成TFRecords
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+    <a class="article-category-link" href="/categories/Tensorflow/">Tensorflow</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/南京/">南京</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/情感/">情感</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/清明/">清明</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tfrecords/">tfrecords</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="tensorflow内定标准格式TFRecords"><a href="#tensorflow内定标准格式TFRecords" class="headerlink" title="tensorflow内定标准格式TFRecords"></a>tensorflow内定标准格式TFRecords</h2><p>TFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。</p>
+<p>TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter 写入到TFRecords文件。</p>
+<p>从<a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="external">Cifar</a>官网上下载cifar10的mat文件，解压。</p>
+<pre>
+<code>
+# -*- coding: utf-8 -*
+import tensorflow as tf
+import os
+import scipy.io as sio
+import numpy as np
+import csv
 
+matfn1 = 'data_batch_1.mat'
+matfn2 = 'data_batch_2.mat'
+matfn3 = 'data_batch_3.mat'
+matfn4 = 'data_batch_4.mat'
+matfn5 = 'data_batch_5.mat'
+matfn = [matfn1, matfn2, matfn3, matfn4, matfn5]
+
+def generate_tfrecords(input_filename, output_filename):
+    print("Start to convert {} to {}".format(input_filename, output_filename))
+    writer = tf.python_io.TFRecordWriter(output_filename)
+    csv_reader = csv.reader(open(input_filename))
+    for r in csv_reader:
+        features = [float(k) for k in r[:-1]]
+        label = float(r[-1])
+        example = tf.train.Example(features=tf.train.Features(feature={
+            "label":
+            tf.train.Feature(float_list=tf.train.FloatList(value=[label])),
+            "features":
+            tf.train.Feature(float_list=tf.train.FloatList(value=features)),
+        }))
+        writer.write(example.SerializeToString())
+    writer.close()
+    print("Successfully convert {} to {}".format(input_filename,
+                                               output_filename))
+
+def generate_csv(input_filename, output_filename):
+    csvfile = file(output_filename, "wb")
+    writer = csv.writer(csvfile)
+    print("start generating csv from mat")
+    matfile = sio.loadmat(input_filename)
+    data = matfile['data']
+    label = matfile['labels']
+    all_data = np.concatenate([data,label],axis=1)
+    writer.writerows(all_data)
+    csvfile.close()
+
+def merge_csv():
+    output_filename = os.getcwd() + '/' + 'cifar10_train.csv'
+    csvfile = file(output_filename, "wb")
+    writer = csv.writer(csvfile)
+    print("Start merging csv")
+    for filename in matfn:
+        input_filename = os.getcwd() + '/' + filename.replace('mat', 'csv')
+        csv_reader = csv.reader(open(input_filename))
+        for line in csv_reader:
+            writer.writerow(line)
+    csvfile.close()
+    for filename in matfn:
+        csv_filename = os.getcwd() + '/' +filename.replace('mat', 'csv')
+        os.remove(csv_filename)
+
+def main():
+    current_path = os.getcwd()
+    for filename in matfn:
+        input_filename = current_path + '/' + filename
+        output_filename = current_path+ '/' + filename.replace('mat', 'csv')
+        generate_csv(input_filename, output_filename)
+
+    merge_csv()
+    input_filename = current_path + '/' + 'test_batch.mat'
+    output_filename = current_path + '/' + 'cifar10_test.csv'
+    generate_csv(input_filename, output_filename)
+    for filename in os.listdir(current_path):
+        print filename
+        if filename.endswith('csv'):
+            input_filename = current_path + '/' + filename
+            output_filename = current_path + '/' + filename.replace('csv','tfrecords')
+            generate_tfrecords(input_filename, output_filename)
+
+if __name__ == "__main__":
+    main()
+</code>
+</pre>
+
+
+<p>其实从mat文件能直接生成tfrecords文件。只是笔者第一次接触tfrecords，没有意识到。<br>如果想直接使用mat文件，在generate_tfrecords函数中填入features和label数据。features对应mat中data的一行数据，label即是mat的对应的一个数字。即可。</p>
+
+      
+    </div>
+    
+  </div>
+  
     
 
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/15/backtracking/">
+                    回溯 backtracking
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tensorflow内定标准格式TFRecords"><span class="toc-number">1.</span> <span class="toc-text">tensorflow内定标准格式TFRecords</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Tensorflow生成TFRecords　| DanVane的小弄弄　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/17/Tensorflow数据读取之TFRecords/" data-title="Tensorflow生成TFRecords" data-url="https://danvane.github.io/2017/02/17/Tensorflow数据读取之TFRecords/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"danvane"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/15/backtracking/" title="下一篇: 回溯 backtracking">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

@@ -4,11 +4,106 @@
   
     
     <entry>
+      <title><![CDATA[Tensorflow生成TFRecords]]></title>
+      <url>https://danvane.github.io/2017/02/17/Tensorflow%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96%E4%B9%8BTFRecords/</url>
+      <content type="html"><![CDATA[<h2 id="tensorflow内定标准格式TFRecords"><a href="#tensorflow内定标准格式TFRecords" class="headerlink" title="tensorflow内定标准格式TFRecords"></a>tensorflow内定标准格式TFRecords</h2><p>TFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。</p>
+<p>TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter 写入到TFRecords文件。</p>
+<p>从<a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="external">Cifar</a>官网上下载cifar10的mat文件，解压。</p>
+<pre>
+<code>
+# -*- coding: utf-8 -*
+import tensorflow as tf
+import os
+import scipy.io as sio
+import numpy as np
+import csv
+
+matfn1 = 'data_batch_1.mat'
+matfn2 = 'data_batch_2.mat'
+matfn3 = 'data_batch_3.mat'
+matfn4 = 'data_batch_4.mat'
+matfn5 = 'data_batch_5.mat'
+matfn = [matfn1, matfn2, matfn3, matfn4, matfn5]
+
+def generate_tfrecords(input_filename, output_filename):
+    print("Start to convert {} to {}".format(input_filename, output_filename))
+    writer = tf.python_io.TFRecordWriter(output_filename)
+    csv_reader = csv.reader(open(input_filename))
+    for r in csv_reader:
+        features = [float(k) for k in r[:-1]]
+        label = float(r[-1])
+        example = tf.train.Example(features=tf.train.Features(feature={
+            "label":
+            tf.train.Feature(float_list=tf.train.FloatList(value=[label])),
+            "features":
+            tf.train.Feature(float_list=tf.train.FloatList(value=features)),
+        }))
+        writer.write(example.SerializeToString())
+    writer.close()
+    print("Successfully convert {} to {}".format(input_filename,
+                                               output_filename))
+
+def generate_csv(input_filename, output_filename):
+    csvfile = file(output_filename, "wb")
+    writer = csv.writer(csvfile)
+    print("start generating csv from mat")
+    matfile = sio.loadmat(input_filename)
+    data = matfile['data']
+    label = matfile['labels']
+    all_data = np.concatenate([data,label],axis=1)
+    writer.writerows(all_data)
+    csvfile.close()
+
+def merge_csv():
+    output_filename = os.getcwd() + '/' + 'cifar10_train.csv'
+    csvfile = file(output_filename, "wb")
+    writer = csv.writer(csvfile)
+    print("Start merging csv")
+    for filename in matfn:
+        input_filename = os.getcwd() + '/' + filename.replace('mat', 'csv')
+        csv_reader = csv.reader(open(input_filename))
+        for line in csv_reader:
+            writer.writerow(line)
+    csvfile.close()
+    for filename in matfn:
+        csv_filename = os.getcwd() + '/' +filename.replace('mat', 'csv')
+        os.remove(csv_filename)
+
+def main():
+    current_path = os.getcwd()
+    for filename in matfn:
+        input_filename = current_path + '/' + filename
+        output_filename = current_path+ '/' + filename.replace('mat', 'csv')
+        generate_csv(input_filename, output_filename)
+
+    merge_csv()
+    input_filename = current_path + '/' + 'test_batch.mat'
+    output_filename = current_path + '/' + 'cifar10_test.csv'
+    generate_csv(input_filename, output_filename)
+    for filename in os.listdir(current_path):
+        print filename
+        if filename.endswith('csv'):
+            input_filename = current_path + '/' + filename
+            output_filename = current_path + '/' + filename.replace('csv','tfrecords')
+            generate_tfrecords(input_filename, output_filename)
+
+if __name__ == "__main__":
+    main()
+</code>
+</pre>
+
+
+<p>其实从mat文件能直接生成tfrecords文件。只是笔者第一次接触tfrecords，没有意识到。<br>如果想直接使用mat文件，在generate_tfrecords函数中填入features和label数据。features对应mat中data的一行数据，label即是mat的对应的一个数字。即可。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[回溯 backtracking]]></title>
       <url>https://danvane.github.io/2017/02/15/backtracking/</url>
       <content type="html"><![CDATA[<h1 id="《算法谜题》1-1-2-回溯法"><a href="#《算法谜题》1-1-2-回溯法" class="headerlink" title="《算法谜题》1.1.2 回溯法"></a>《算法谜题》1.1.2 回溯法</h1><p>回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：</p>
 <p><strong>如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。</strong></p>
 <p>一般，回溯法能避免生成不必要的可能解。但在最坏情况下，某个回溯算法可能与穷举搜索一样，最终生成了所有可能解，这种情况很罕见。</p>
+<a id="more"></a>
 <h2 id="状态空间树-state-space-tree"><a href="#状态空间树-state-space-tree" class="headerlink" title="状态空间树 state-space tree"></a>状态空间树 state-space tree</h2><p>根节点放在第0层，对应解构造过程的出发点。根节点的第1层子节点对应于解的第一个部件的可能选择。第2层子节点对应于第二个部件的可能选择，以此类推。</p>
 <p>状态空间树的叶子节点有两种可能的类型：</p>
 <ol>
