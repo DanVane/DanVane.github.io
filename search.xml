@@ -8,7 +8,7 @@
       <url>https://danvane.github.io/2017/02/17/Tensorflow%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96%E4%B9%8BTFRecords/</url>
       <content type="html"><![CDATA[<h2 id="tensorflow内定标准格式TFRecords"><a href="#tensorflow内定标准格式TFRecords" class="headerlink" title="tensorflow内定标准格式TFRecords"></a>tensorflow内定标准格式TFRecords</h2><p>TFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。</p>
 <p>TFRecords文件包含了tf.train.Example协议内存块(protocol buffer，包含了字段 Features)。我们可以将数据填入到Example协议内存块，将协议内存块序列化为一个字符串，并且通过tf.python_io.TFRecordWriter 写入到TFRecords文件。</p>
-<p>从<a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="external">Cifar</a>官网上下载cifar10的mat文件，解压。</p>
+<p>从<a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="external">Cifar</a>官网上下载cifar10的mat文件，解压。<br><a id="more"></a></p>
 <pre>
 <code>
 # -*- coding: utf-8 -*
@@ -111,7 +111,41 @@ if __name__ == "__main__":
 <li><strong>解节点</strong>。如果搜到一个解，算法就会终止。如果还需要搜索其他解，则算法回溯到叶节点的父节点，继续搜索。</li>
 </ol>
 <h2 id="n皇后问题"><a href="#n皇后问题" class="headerlink" title="n皇后问题"></a>n皇后问题</h2><p>将n个皇后放置在n*n的国际象棋棋盘上，其中没有任何两个皇后处于同一行、同一列或同一对角线上，以使得它们不能相互攻击。</p>
-<h3 id="回溯法代码"><a href="#回溯法代码" class="headerlink" title="回溯法代码"></a>回溯法代码</h3><h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2>]]></content>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>在 n=1 的情况下，该问题有平凡解。而在 n=2 和 n=3 的情况下，该问题无解。考虑 n=4，由于每个皇后都要放到它独占的列上去，我们只需把每个皇后分配到行上就行了。</p>
+<h3 id="回溯法代码"><a href="#回溯法代码" class="headerlink" title="回溯法代码"></a>回溯法代码</h3><pre>
+<code>
+private void backtracking_argo(CState c_state) {
+        int already_queen = c_state.get_already_state();
+        boolean success_flag = true;
+        int n = c_state.get_state().length;
+        save_current_state(c_state); //当前状态压栈
+        CState temp_state = c_state.clone();
+        for (int i = 0; i < n; i++) { //第already_queen行，第i列
+            temp_state = c_state.clone();
+            temp_state.set_c_state(already_queen, i);
+            if (judge_reasonable(temp_state)) { //不冲突
+                if (temp_state.get_already_state() == temp_state.get_state().length) { //解节点
+                    state_successful.add(temp_state);
+                    //寻找下一解
+                    continue;
+                }// 放置下一个皇后
+                backtracking_argo((CState) temp_state.clone());
+            } else if (i == n - 1) {    //无望节点，循环完毕，父节点无用；若循环未结束，则寻找下一位置
+                success_flag = false;
+            }
+        }
+        if (!success_flag) { //栈顶节点无用，出栈
+            if (state_ancestors.size() > 0) {
+                state_ancestors.remove(state_ancestors.size() - 1);
+            }
+        }
+    }
+</code>
+</pre>
+
+
+<p><a href="https://github.com/DanVane/Algorithms/blob/master/Backtrack.java" target="_blank" rel="external">源码</a></p>
+<h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2>]]></content>
     </entry>
     
     <entry>
@@ -237,7 +271,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
     <entry>
       <title><![CDATA[雨]]></title>
       <url>https://danvane.github.io/2016/09/28/%E9%9B%A8/</url>
-      <content type="html"><![CDATA[<p>浓重的夜色中，雨珠就那么倾斜着落了下来。时近凌晨，刚刚熄了灯，我侧身躺在床上，却没有分毫睡意，于是静静地听起窗外雨落金盘的声音。</p>
+      <content type="html"><![CDATA[<p><img src="/2016/09/28/雨/jimingsi.jpg" alt=""><br>浓重的夜色中，雨珠就那么倾斜着落了下来。时近凌晨，刚刚熄了灯，我侧身躺在床上，却没有分毫睡意，于是静静地听起窗外雨落金盘的声音。</p>
 <p>“敲成玉磬穿林响，忽作玻璃碎地声。”前几日各地雪花飘落，听说南京已是积成了几十公分厚度，我家这却没有那样，落地的雪花随即化了，没有形成银白世界。倒是这雨珠，淅淅沥沥缠缠绵绵了好几日，加上那刺骨的风，直直地逼得人冷静下来。<br><a id="more"></a><br>我在床上，思路越发清晰。外面风声雨声交杂，清晰地回响在耳中，有点“大珠小珠落玉盘”的意味。随着这雨声更迭，一股清凉缓缓地流进了心间。我浑然觉得百无聊赖，没什么事情好想好做，便细细地忆起曾经背过吟过的那些写在风雨中的诗句了。</p>
 <p>“好雨知时节，当春乃发生。随风潜入夜，润物细无声。”杜甫的《春夜细雨》许是最让人记忆深刻的名句了。这诗，我应当是小学二年级时学到的吧，那时的语文课本还是带拼音的。年轻靓丽的老师站在讲台上，手上还拿着把戒尺，一句一句地领读着。她念一句，我们跟着念一句，有甚者还摇头晃脑。老师领读完毕后，就是自由诵读时间了。我们于是一边看拼音，一边看书上的楷体汉字，情绪激昂地一字一字念着。看到旁边同学点头晃脑，自己便有样学样，电视里的学究不都是这样吗？搞学问、有大知识的人摇着晃着念书才有味道呢！老师是师范大学毕业的，刚刚走上工作岗位，又水嫩又娇俏，在我们这群农村孩子眼中，倒和天仙儿一样。小孩子没见过大世面，只是在亲朋好友的逗笑下，立着一个个“清华”、“北大”、“复旦”的理想，做着一个个“科学家”、“宇航员”、“大作家”的梦想。</p>
 <p>“黑云翻墨未遮山，白雨跳珠乱入船”、“夜阑卧听风雨声，铁马冰河入梦来”，初中时代的雨带着点忧伤，又有些豪情。十四五岁的孩子，脸上的痘痘如雨后的春笋，一茬一茬地冒了出来。村里的大人们希望孩子将来有出息，纷纷将娃儿们送到城里去读书。城市和农村可是不一样的，这里有夜市、霓虹灯，街旁的商店也比乡间多了几倍，大了几倍。很多家庭在学校旁租住了房子。早晨，草叶子上的露珠还未低落时，孩子们从出租屋里出发；夜晚，街道灯散发着幽幽的黄色光芒，才刚放学的初三学生们才匆匆往家里赶。碰上下雨的周末，我总爱静静地站在窗前，看雨珠在玻璃上砸出一个又一个水点子。站了许久，直到小腿麻木才走进屋里，怅惘地捧起课本，温习学到的知识。犹记得中考那段日子，雨瓢泼似的洒落，一刻也不曾停歇。每每穿着干爽的衣服从家里出发，到了学校却成了湿漉漉地。没有办法，只能将就着将试卷做完。这衣服，到了家就立即换下好了。</p>
