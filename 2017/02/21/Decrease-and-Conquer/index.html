@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="DanVane的小弄弄">
 <meta property="og:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
 士兵摆渡25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男">
-<meta property="og:updated_time" content="2017-02-22T11:54:09.718Z">
+<meta property="og:updated_time" content="2017-02-22T12:31:19.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="减而治之">
 <meta name="twitter:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
@@ -394,7 +394,21 @@ private void startDC(int fs, int fc) {
     }
 }
 </code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Decrease_by_Constant_Factor.java" target="_blank" rel="external">源码</a></p>
-<p>参见《算法谜题》1.1.3</p>
+<p>有时通过自底向上的方法来发掘较大和较小问题之间的关系，可能会更简单。先把谜题的最小规模谜面接触，然后再看第二小的，以此类推。这种方法有时称为<em>增量法（incremental approach）</em>。</p>
+<h3 id="矩形切割"><a href="#矩形切割" class="headerlink" title="矩形切割"></a>矩形切割</h3><p>找出所有将一个矩形分成n个直角三角形的方法（n&gt;1）。并且将这种切割方法归纳为一个算法。</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><pre><code>Input: 矩阵M，直角三角形个数n（n&gt;1）. 
+Output:
+Algorithm:
+    1. 已有的直角三角形个数m=0 
+    2. 用对角线l划分矩阵M，记录该对角线所对的一个端点A
+    3. m=2
+    4. repeat：
+        1. if(n==m)
+            1. exit
+        2. 从A作l的垂线
+        3. 更新A为该垂线和l的交点，更新l为A所对的直角三角形的斜边
+        4. ++m    
+</code></pre><p>参见《算法谜题》1.1.3</p>
 
       
     </div>
@@ -421,7 +435,7 @@ private void startDC(int fs, int fc) {
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#士兵摆渡"><span class="toc-number">1.</span> <span class="toc-text">士兵摆渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬币中的假币"><span class="toc-number">3.</span> <span class="toc-text">硬币中的假币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#士兵摆渡"><span class="toc-number">1.</span> <span class="toc-text">士兵摆渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬币中的假币"><span class="toc-number">3.</span> <span class="toc-text">硬币中的假币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形切割"><span class="toc-number">5.</span> <span class="toc-text">矩形切割</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-number">6.</span> <span class="toc-text">算法</span></a></li></ol>
         
     </div>
     <style>

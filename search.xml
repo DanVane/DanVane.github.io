@@ -96,7 +96,21 @@ private void startDC(int fs, int fc) {
     }
 }
 </code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Decrease_by_Constant_Factor.java" target="_blank" rel="external">源码</a></p>
-<p>参见《算法谜题》1.1.3</p>
+<p>有时通过自底向上的方法来发掘较大和较小问题之间的关系，可能会更简单。先把谜题的最小规模谜面接触，然后再看第二小的，以此类推。这种方法有时称为<em>增量法（incremental approach）</em>。</p>
+<h3 id="矩形切割"><a href="#矩形切割" class="headerlink" title="矩形切割"></a>矩形切割</h3><p>找出所有将一个矩形分成n个直角三角形的方法（n&gt;1）。并且将这种切割方法归纳为一个算法。</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><pre><code>Input: 矩阵M，直角三角形个数n（n&gt;1）. 
+Output:
+Algorithm:
+    1. 已有的直角三角形个数m=0 
+    2. 用对角线l划分矩阵M，记录该对角线所对的一个端点A
+    3. m=2
+    4. repeat：
+        1. if(n==m)
+            1. exit
+        2. 从A作l的垂线
+        3. 更新A为该垂线和l的交点，更新l为A所对的直角三角形的斜边
+        4. ++m    
+</code></pre><p>参见《算法谜题》1.1.3</p>
 ]]></content>
     </entry>
     
