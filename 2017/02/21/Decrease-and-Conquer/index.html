@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="DanVane的小弄弄">
 <meta property="og:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
 士兵摆渡25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男">
-<meta property="og:updated_time" content="2017-02-22T10:46:35.622Z">
+<meta property="og:updated_time" content="2017-02-22T11:54:09.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="减而治之">
 <meta name="twitter:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬币中的假币/">硬币中的假币</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
                     </div>
                 </section>
                 
@@ -294,7 +294,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/递归/">递归</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬币中的假币/">硬币中的假币</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/递归/">递归</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -333,6 +333,67 @@ private void startDC(int fs, int fc) {
 </pre>
 
 <p><a href="https://github.com/DanVane/Algorithms/blob/master/Decrease_and_conquer.java" target="_blank" rel="external">源码</a></p>
+<p>一般的，采用减而治之求解时，较小谜面的规模未必是n-1。尽管每次减1是减少规模最常见的情况，减少幅度更大的例子也是有的。如果在每次迭代时，把弥漫降低一个常数因子，例如减半，那算法就会很快。如果某个算法能以更大的因子来减少谜面规模的话，那还会更快。<em>每次减少常数因子（decrease-by-constant-factor）</em></p>
+<h3 id="硬币中的假币"><a href="#硬币中的假币" class="headerlink" title="硬币中的假币"></a>硬币中的假币</h3><p>有8枚外观完全一致的硬币，其中的一枚是假币，并且知道假币要比真币轻一些，可以使用天平但不能用砝码，问最少称几次才能把假币辨别出来？</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code>private void weight_Coins(List&lt;Integer&gt; coins) {
+    int first_split = (coins.size()+1)/3;
+    int sec_split = 2*first_split;
+    int sum_1 = 0;
+    int sum_2 =0;
+    for(int i=0;i&lt;coins.size();i++){
+        if(i&lt;first_split){
+            sum_1 += coins.get(i);
+        }else if(i&lt;sec_split){
+            sum_2+=coins.get(i);
+        }else{
+            break;
+        }
+    }
+    if(sum_1==sum_2){
+        //第三段
+        if(coins.size()-sec_split==1){
+            steps.add(coins.toString()+&quot; the third&quot;);
+            return ;
+        }
+        String str = &quot;Split &quot;+coins.toString()+&quot; to 3 segs(&quot;+first_split+&quot;,&quot;
+                +first_split+&quot;,&quot;+(coins.size()-sec_split)+&quot;), choose the third&quot;;
+        steps.add(str);
+        List&lt;Integer&gt; sub_coins = new ArrayList&lt;Integer&gt;();
+        for(int i=sec_split;i&lt;coins.size();i++){
+            sub_coins.add(coins.get(i));
+        }
+        weight_Coins(sub_coins);
+    }else if(sum_1&lt;sum_2){
+        //第一段
+        if(first_split==1){
+            steps.add(coins.toString()+&quot; the first&quot;);
+            return;
+        }
+        String str = &quot;Split &quot;+coins.toString()+&quot; to 3 segs(&quot;+first_split+&quot;,&quot;
+                +first_split+&quot;,&quot;+(coins.size()-sec_split)+&quot;), choose the first&quot;;
+        steps.add(str);
+        List&lt;Integer&gt; sub_coins = new ArrayList&lt;Integer&gt;();
+        for(int i=0;i&lt;first_split;i++){
+            sub_coins.add(coins.get(i));
+        }
+        weight_Coins(sub_coins);
+    }else{
+        // 第二段
+        if(sec_split-first_split==1){
+            steps.add(coins.toString()+&quot; the second&quot;);
+            return;
+        }
+        String str = &quot;Split &quot;+coins.toString()+&quot; to 3 segs(&quot;+first_split+&quot;,&quot;
+                +first_split+&quot;,&quot;+(coins.size()-sec_split)+&quot;), choose the second&quot;;
+        steps.add(str);
+        List&lt;Integer&gt; sub_coins = new ArrayList&lt;Integer&gt;();
+        for(int i=first_split;i&lt;sec_split;i++){
+            sub_coins.add(coins.get(i));
+        }
+        weight_Coins(sub_coins);
+    }
+}
+</code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Decrease_by_Constant_Factor.java" target="_blank" rel="external">源码</a></p>
 <p>参见《算法谜题》1.1.3</p>
 
       
@@ -360,7 +421,7 @@ private void startDC(int fs, int fc) {
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#士兵摆渡"><span class="toc-number">1.</span> <span class="toc-text">士兵摆渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#士兵摆渡"><span class="toc-number">1.</span> <span class="toc-text">士兵摆渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬币中的假币"><span class="toc-number">3.</span> <span class="toc-text">硬币中的假币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
