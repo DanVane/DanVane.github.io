@@ -15,43 +15,19 @@
 
 
 
-<meta name="description" content=".article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .art">
-<meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found:该页无法显示">
-<meta property="og:url" content="https://danvane.github.io/404.html">
+<meta name="description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
+士兵摆渡25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男">
+<meta property="og:type" content="article">
+<meta property="og:title" content="减而治之">
+<meta property="og:url" content="https://danvane.github.io/2017/02/21/Decrease-and-Conquer/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
-<meta property="og:description" content=".article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .art">
-<meta property="og:updated_time" content="2016-09-28T05:54:18.164Z">
+<meta property="og:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
+士兵摆渡25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男">
+<meta property="og:updated_time" content="2017-02-22T10:00:27.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404 Not Found:该页无法显示">
-<meta name="twitter:description" content=".article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .art">
+<meta name="twitter:title" content="减而治之">
+<meta name="twitter:description" content="减而治之(decrease-and-conquer)策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种递归算法(recursive algorithm)，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。
+士兵摆渡25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -81,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>404 Not Found:该页无法显示 | DanVane的小弄弄</title>
+<title>减而治之 | DanVane的小弄弄</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -91,7 +67,7 @@
         fancybox: true,
         animate: false,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -284,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Decrease-and-Conquer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/404.html" class="article-date">
-      <time datetime="2016-09-28T05:48:50.000Z" itemprop="datePublished">2016-09-28</time>
+      <a href="/2017/02/21/Decrease-and-Conquer/" class="article-date">
+      <time datetime="2017-02-21T08:26:39.000Z" itemprop="datePublished">2017-02-21</time>
 </a>
 
 
@@ -303,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      404 Not Found:该页无法显示
+      减而治之
     </h1>
   
 
@@ -311,8 +287,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Algorithmic-Puzzles《算法谜题》/">Algorithmic Puzzles《算法谜题》</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/递归/">递归</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -320,82 +304,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
+        <p><em>减而治之(decrease-and-conquer)</em>策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种<em>递归算法(recursive algorithm)</em>，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。</p>
+<h3 id="士兵摆渡"><a href="#士兵摆渡" class="headerlink" title="士兵摆渡"></a>士兵摆渡</h3><p>25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男孩正在上面玩耍。船很小，只能承载两个男孩或一个士兵的重量。士兵应怎样渡河？在你的算法中，船从一个岸边到另一个岸边来回共计几次？<br><a id="more"></a></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre>
+<code>
+private void startDC(int fs, int fc) {
+        set_step(fs, fc);
+        if (--fs != 0) {
+            startDC(fs, fc);
+        }
     }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
 
+    private void set_step(int fs, int fc) {
+        String str = "fs:" + fs + ", fc:" + 2 + "----" + "ss:" + (25 - fs) + ", sc:" + 0;
+        step.add(str);
+        str = "fs:" + fs + ", fc:" + 0 + "----" + "ss:" + (25 - fs) + ", sc:" + 2;
+        step.add(str);
+        str = "fs:" + fs + ", fc:" + 1 + "----" + "ss:" + (25 - fs) + ", sc:" + 1;
+        step.add(str);
+        str = "fs:" + --fs + ", fc:" + 1 + "----" + "ss:" + (25 - fs) + ", sc:" + 1;
+        step.add(str);
+        if (fs == 1) {
+            str = "fs:" + fs + ", fc:" + 2 + "----" + "ss:" + (25 - fs) + ", sc:" + 0;
+            step.add(str);
+        }
+    }
+</code>
+</pre>
 
-          
-        <style type="text/css">
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 2.1em;
-    }
-    strong a {
-        color: #747474;
-    }
-    .article-meta {
-        display: none;
-    }
-    .share {
-        display: none;
-    }
-    .ds-meta {
-        display: none;
-    }
-    .player {
-        margin-left: -10px;
-    }
-    .sign {
-        text-align: right;
-        font-style: italic;
-    }
-      #page-visit {
-        display: none;
-    }
-    .center {
-        text-align: center;
-        height: 2.5em;
-        font-weight: bold;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    .pic {
-        text-align: center;
-        margin: 0;
-    }
-    .pic br {
-          display: none;
-      }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+<p><a href="">源码</a></p>
+<p>参见《算法谜题》1.1.3</p>
+
       
     </div>
     
@@ -404,8 +343,42 @@
     
 
 
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/17/Tensorflow数据读取之TFRecords/">
+                    Tensorflow生成TFRecords
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#士兵摆渡"><span class="toc-number">1.</span> <span class="toc-text">士兵摆渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -423,7 +396,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"404 Not Found:该页无法显示　| DanVane的小弄弄　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"减而治之　| DanVane的小弄弄　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,6 +409,45 @@
 
 
 
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/21/Decrease-and-Conquer/" data-title="减而治之" data-url="https://danvane.github.io/2017/02/21/Decrease-and-Conquer/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"danvane"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/17/Tensorflow数据读取之TFRecords/" title="下一篇: Tensorflow生成TFRecords">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/Decrease-and-Conquer/">减而治之</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
 
 
 

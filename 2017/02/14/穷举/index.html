@@ -15,21 +15,21 @@
 
 
 
-<meta name="description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+<meta name="description" content="穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
 
 幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="穷举 Exhaustive search">
 <meta property="og:url" content="https://danvane.github.io/2017/02/14/穷举/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
-<meta property="og:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+<meta property="og:description" content="穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
 
 幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta property="og:image" content="https://danvane.github.io/2017/02/14/穷举/exhaustivity.PNG">
-<meta property="og:updated_time" content="2017-02-15T08:14:19.553Z">
+<meta property="og:updated_time" content="2017-02-21T08:27:41.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="穷举 Exhaustive search">
-<meta name="twitter:description" content="《算法谜题》1.1.1穷举搜索穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
+<meta name="twitter:description" content="穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。
 
 幻方：试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。">
 <meta name="twitter:image" content="https://danvane.github.io/2017/02/14/穷举/exhaustivity.PNG">
@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
                     </div>
                 </section>
                 
@@ -309,7 +309,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="《算法谜题》1-1-1穷举搜索"><a href="#《算法谜题》1-1-1穷举搜索" class="headerlink" title="《算法谜题》1.1.1穷举搜索"></a>《算法谜题》1.1.1穷举搜索</h1><p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p>
+        <p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p>
 
 <h3 id="幻方："><a href="#幻方：" class="headerlink" title="幻方："></a>幻方：</h3><p>试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。</p>
 
@@ -423,6 +423,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
 <li>需要生成和处理的可能解数量。一般，该集合的规模会随着问题规模呈指数增长。所以，穷举搜索只能再规模很小的情况下可行。</li>
 </ol>
 <p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>
+<p>参见 《算法谜题》1.1.1穷举搜索</p>
 
       
     </div>
@@ -455,7 +456,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《算法谜题》1-1-1穷举搜索"><span class="toc-number">1.</span> <span class="toc-text">《算法谜题》1.1.1穷举搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#幻方："><span class="toc-number">1.0.1.</span> <span class="toc-text">幻方：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#穷举"><span class="toc-number">1.0.2.</span> <span class="toc-text">穷举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-number">1.0.3.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断是否符合题目要求"><span class="toc-number">1.0.4.</span> <span class="toc-text">判断是否符合题目要求</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#幻方："><span class="toc-number">1.</span> <span class="toc-text">幻方：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#穷举"><span class="toc-number">2.</span> <span class="toc-text">穷举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归"><span class="toc-number">3.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断是否符合题目要求"><span class="toc-number">4.</span> <span class="toc-text">判断是否符合题目要求</span></a></li></ol>
         
     </div>
     <style>
@@ -544,7 +545,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/Decrease-and-Conquer/">减而治之</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
 
 
 

@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="《算法谜题》1.1.2 回溯法回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
-如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换">
+<meta name="description" content="回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
+如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回溯 backtracking">
 <meta property="og:url" content="https://danvane.github.io/2017/02/15/backtracking/index.html">
 <meta property="og:site_name" content="DanVane的小弄弄">
-<meta property="og:description" content="《算法谜题》1.1.2 回溯法回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
-如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换">
-<meta property="og:updated_time" content="2017-02-21T08:14:16.189Z">
+<meta property="og:description" content="回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
+如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。">
+<meta property="og:updated_time" content="2017-02-21T08:28:26.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯 backtracking">
-<meta name="twitter:description" content="《算法谜题》1.1.2 回溯法回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
-如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换">
+<meta name="twitter:description" content="回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：
+如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
                     </div>
                 </section>
                 
@@ -304,7 +304,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="《算法谜题》1-1-2-回溯法"><a href="#《算法谜题》1-1-2-回溯法" class="headerlink" title="《算法谜题》1.1.2 回溯法"></a>《算法谜题》1.1.2 回溯法</h1><p>回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：</p>
+        <p>回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：</p>
 <p><strong>如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。</strong></p>
 <p>一般，回溯法能避免生成不必要的可能解。但在最坏情况下，某个回溯算法可能与穷举搜索一样，最终生成了所有可能解，这种情况很罕见。</p>
 <a id="more"></a>
@@ -349,7 +349,8 @@ private void backtracking_argo(CState c_state) {
 
 
 <p><a href="https://github.com/DanVane/Algorithms/blob/master/Backtrack.java" target="_blank" rel="external">源码</a></p>
-<h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2>
+<h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2><p>参见《算法谜题》1.1.2 回溯法</p>
+
       
     </div>
     
@@ -381,7 +382,7 @@ private void backtracking_argo(CState c_state) {
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《算法谜题》1-1-2-回溯法"><span class="toc-number">1.</span> <span class="toc-text">《算法谜题》1.1.2 回溯法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#状态空间树-state-space-tree"><span class="toc-number">1.1.</span> <span class="toc-text">状态空间树 state-space tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#n皇后问题"><span class="toc-number">1.2.</span> <span class="toc-text">n皇后问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-number">1.2.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回溯法代码"><span class="toc-number">1.2.2.</span> <span class="toc-text">回溯法代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯法-VS-穷举搜索"><span class="toc-number">1.3.</span> <span class="toc-text">回溯法 VS 穷举搜索</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#状态空间树-state-space-tree"><span class="toc-number">1.</span> <span class="toc-text">状态空间树 state-space tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#n皇后问题"><span class="toc-number">2.</span> <span class="toc-text">n皇后问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-number">2.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回溯法代码"><span class="toc-number">2.2.</span> <span class="toc-text">回溯法代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯法-VS-穷举搜索"><span class="toc-number">3.</span> <span class="toc-text">回溯法 VS 穷举搜索</span></a></li></ol>
         
     </div>
     <style>
@@ -470,7 +471,7 @@ private void backtracking_argo(CState c_state) {
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/Decrease-and-Conquer/">减而治之</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Tensorflow数据读取之TFRecords/">Tensorflow生成TFRecords</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/backtracking/">回溯 backtracking</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/穷举/">穷举 Exhaustive search</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/雨/">雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/胡思乱想/">胡思乱想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/爱雨/">爱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/朋友的小故事/">朋友的小故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/对话/">对话</a></li></ul>
 
 
 

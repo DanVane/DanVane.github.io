@@ -4,6 +4,42 @@
   
     
     <entry>
+      <title><![CDATA[减而治之]]></title>
+      <url>https://danvane.github.io/2017/02/21/Decrease-and-Conquer/</url>
+      <content type="html"><![CDATA[<p><em>减而治之(decrease-and-conquer)</em>策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种<em>递归算法(recursive algorithm)</em>，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。</p>
+<h3 id="士兵摆渡"><a href="#士兵摆渡" class="headerlink" title="士兵摆渡"></a>士兵摆渡</h3><p>25个士兵组成的小分队需要渡河，可是河宽且水深，周围也看不到桥。他们发现岸边有一个小船，两个12岁的男孩正在上面玩耍。船很小，只能承载两个男孩或一个士兵的重量。士兵应怎样渡河？在你的算法中，船从一个岸边到另一个岸边来回共计几次？<br><a id="more"></a></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre>
+<code>
+private void startDC(int fs, int fc) {
+        set_step(fs, fc);
+        if (--fs != 0) {
+            startDC(fs, fc);
+        }
+    }
+
+    private void set_step(int fs, int fc) {
+        String str = "fs:" + fs + ", fc:" + 2 + "----" + "ss:" + (25 - fs) + ", sc:" + 0;
+        step.add(str);
+        str = "fs:" + fs + ", fc:" + 0 + "----" + "ss:" + (25 - fs) + ", sc:" + 2;
+        step.add(str);
+        str = "fs:" + fs + ", fc:" + 1 + "----" + "ss:" + (25 - fs) + ", sc:" + 1;
+        step.add(str);
+        str = "fs:" + --fs + ", fc:" + 1 + "----" + "ss:" + (25 - fs) + ", sc:" + 1;
+        step.add(str);
+        if (fs == 1) {
+            str = "fs:" + fs + ", fc:" + 2 + "----" + "ss:" + (25 - fs) + ", sc:" + 0;
+            step.add(str);
+        }
+    }
+</code>
+</pre>
+
+<p><a href="">源码</a></p>
+<p>参见《算法谜题》1.1.3</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Tensorflow生成TFRecords]]></title>
       <url>https://danvane.github.io/2017/02/17/Tensorflow%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96%E4%B9%8BTFRecords/</url>
       <content type="html"><![CDATA[<h2 id="tensorflow内定标准格式TFRecords"><a href="#tensorflow内定标准格式TFRecords" class="headerlink" title="tensorflow内定标准格式TFRecords"></a>tensorflow内定标准格式TFRecords</h2><p>TFrecords是一种二进制文件，能更好地利用内存，也方便复制和移动。</p>
@@ -100,7 +136,7 @@ if __name__ == "__main__":
     <entry>
       <title><![CDATA[回溯 backtracking]]></title>
       <url>https://danvane.github.io/2017/02/15/backtracking/</url>
-      <content type="html"><![CDATA[<h1 id="《算法谜题》1-1-2-回溯法"><a href="#《算法谜题》1-1-2-回溯法" class="headerlink" title="《算法谜题》1.1.2 回溯法"></a>《算法谜题》1.1.2 回溯法</h1><p>回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：</p>
+      <content type="html"><![CDATA[<p>回溯法是对穷举搜索所采取的蛮力做法的一种重要改进。其核心在于，采用一次添加一个组件的方法来构造解，并且按照以下思想评估可能解的“半成品”：</p>
 <p><strong>如果这个构造一般的解可以再向前推进一步而不违反题设的约束，则选择第一个合法选项作为下一个部件。如果找不到合法选项作为下一个部件，那么就不再需要去考虑任何其余部件了。在这种情况下，算法执行回溯，把当前构造到一半的解的最后一个部件替换成该部件可选的下一个合法选项。</strong></p>
 <p>一般，回溯法能避免生成不必要的可能解。但在最坏情况下，某个回溯算法可能与穷举搜索一样，最终生成了所有可能解，这种情况很罕见。</p>
 <a id="more"></a>
@@ -145,13 +181,14 @@ private void backtracking_argo(CState c_state) {
 
 
 <p><a href="https://github.com/DanVane/Algorithms/blob/master/Backtrack.java" target="_blank" rel="external">源码</a></p>
-<h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2>]]></content>
+<h2 id="回溯法-VS-穷举搜索"><a href="#回溯法-VS-穷举搜索" class="headerlink" title="回溯法 VS 穷举搜索"></a>回溯法 VS 穷举搜索</h2><p>参见《算法谜题》1.1.2 回溯法</p>
+]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[穷举 Exhaustive search]]></title>
       <url>https://danvane.github.io/2017/02/14/%E7%A9%B7%E4%B8%BE/</url>
-      <content type="html"><![CDATA[<h1 id="《算法谜题》1-1-1穷举搜索"><a href="#《算法谜题》1-1-1穷举搜索" class="headerlink" title="《算法谜题》1.1.1穷举搜索"></a>《算法谜题》1.1.1穷举搜索</h1><p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p>
+      <content type="html"><![CDATA[<p>穷举搜索会直截了当地试遍所有可能借，直到找到问题的解。很少需要人工计算，基本上是为计算机准备的。<br>最大局限在于它的效率低下：通常，如果可能解的数量随着问题规模而呈指数增长或更快的话，那么这种途径并不可取。</p>
 
 <h3 id="幻方："><a href="#幻方：" class="headerlink" title="幻方："></a>幻方：</h3><p>试将1~9这9个不同整数填入一个3*3的表格，使得每行、每列一级每条对角线上的数字之和相同。</p>
 
@@ -265,6 +302,7 @@ private List&lt;Integer&gt; recursion(List&lt;Integer&gt; res, List&lt;Integer&g
 <li>需要生成和处理的可能解数量。一般，该集合的规模会随着问题规模呈指数增长。所以，穷举搜索只能再规模很小的情况下可行。</li>
 </ol>
 <p>源码见<a href="https://github.com/DanVane/Algorithms/blob/master/Exhaustivity.java" target="_blank" rel="external">Exhaustivity</a>.</p>
+<p>参见 《算法谜题》1.1.1穷举搜索</p>
 ]]></content>
     </entry>
     
