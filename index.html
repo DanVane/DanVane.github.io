@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬币中的假币/">硬币中的假币</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cifar10/">cifar10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tfrecords/">tfrecords</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/减而治之/">减而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分而治之/">分而治之</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/南京/">南京</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/友情/">友情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/士兵摆渡/">士兵摆渡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/夜雨/">夜雨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/家庭/">家庭</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/清明/">清明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬币中的假币/">硬币中的假币</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/递归/">递归</a></li></ul>
                     </div>
                 </section>
                 
@@ -257,6 +257,101 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Divide-and-conquer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/22/Divide-and-conquer/" class="article-date">
+      <time datetime="2017-02-22T12:33:22.000Z" itemprop="datePublished">2017-02-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/22/Divide-and-conquer/">Divide-and-conquer</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>分而治之（divide-and-conquer）</strong>策略就是要把一个问题划分为若干较小的子问题（通常具有相同或相关的类型，理想情况下规模也大致一样），然后各个击破，最后在必要时把子问题的解组合起来，就得到了原始问题的解。但是，能够采用分而治之求解的谜题并不多。</p>
+<h3 id="三格骨牌谜题"><a href="#三格骨牌谜题" class="headerlink" title="三格骨牌谜题"></a>三格骨牌谜题</h3><p>使用适当的三格骨牌来覆盖一块缺了一个的\( 2^n * 2^n\)棋盘。所谓三格骨牌就是L形的相邻三格。棋盘上缺的可以是任何一格。三格骨牌必须覆盖除缺格外的全部其它格，且不能有重叠。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>private void startDC(int[] start) {
+
+    int step = start[2];
+    if (step == 2) {
+        if (checkerboard[start[0]][start[1]] == 1) {
+            checkerboard[start[0]][start[1]] = flag;
+        }
+        if (checkerboard[start[0] + 1][start[1]] == 1) {
+            checkerboard[start[0] + 1][start[1]] = flag;
+        }
+        if (checkerboard[start[0]][start[1] + 1] == 1) {
+            checkerboard[start[0]][start[1] + 1] = flag;
+        }
+        if (checkerboard[start[0] + 1][start[1] + 1] == 1) {
+            checkerboard[start[0] + 1][start[1] + 1] = flag;
+        }
+        flag++;
+    } else {
+        paint_checkerboard(start);
+        List&lt;int[]&gt; start_numbers = new ArrayList&lt;int[]&gt;();
+        start_numbers.add(new int[]{start[0], start[1], step/2});
+        start_numbers.add(new int[]{start[0] + step / 2, start[1], step/2});
+        start_numbers.add(new int[]{start[0], start[1] + step / 2, step/2});
+        start_numbers.add(new int[]{start[0] + step / 2, start[1] + step / 2, step/2});
+        for (int i = 0; i &lt; start_numbers.size(); i++) {
+            startDC(start_numbers.get(i));
+        }
+    }
+}
+</code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Divide_and_Conquer.java" target="_blank" rel="external">源码</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/《Algorithmic-Puzzles》-算法谜题/">《Algorithmic Puzzles》 算法谜题</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分而治之/">分而治之</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Decrease-and-Conquer" class="article article-type-post" itemscope itemprop="blogPost">
   

@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title><![CDATA[Divide-and-conquer]]></title>
+      <url>https://danvane.github.io/2017/02/22/Divide-and-conquer/</url>
+      <content type="html"><![CDATA[<p><strong>分而治之（divide-and-conquer）</strong>策略就是要把一个问题划分为若干较小的子问题（通常具有相同或相关的类型，理想情况下规模也大致一样），然后各个击破，最后在必要时把子问题的解组合起来，就得到了原始问题的解。但是，能够采用分而治之求解的谜题并不多。</p>
+<h3 id="三格骨牌谜题"><a href="#三格骨牌谜题" class="headerlink" title="三格骨牌谜题"></a>三格骨牌谜题</h3><p>使用适当的三格骨牌来覆盖一块缺了一个的\( 2^n * 2^n\)棋盘。所谓三格骨牌就是L形的相邻三格。棋盘上缺的可以是任何一格。三格骨牌必须覆盖除缺格外的全部其它格，且不能有重叠。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>private void startDC(int[] start) {
+
+    int step = start[2];
+    if (step == 2) {
+        if (checkerboard[start[0]][start[1]] == 1) {
+            checkerboard[start[0]][start[1]] = flag;
+        }
+        if (checkerboard[start[0] + 1][start[1]] == 1) {
+            checkerboard[start[0] + 1][start[1]] = flag;
+        }
+        if (checkerboard[start[0]][start[1] + 1] == 1) {
+            checkerboard[start[0]][start[1] + 1] = flag;
+        }
+        if (checkerboard[start[0] + 1][start[1] + 1] == 1) {
+            checkerboard[start[0] + 1][start[1] + 1] = flag;
+        }
+        flag++;
+    } else {
+        paint_checkerboard(start);
+        List&lt;int[]&gt; start_numbers = new ArrayList&lt;int[]&gt;();
+        start_numbers.add(new int[]{start[0], start[1], step/2});
+        start_numbers.add(new int[]{start[0] + step / 2, start[1], step/2});
+        start_numbers.add(new int[]{start[0], start[1] + step / 2, step/2});
+        start_numbers.add(new int[]{start[0] + step / 2, start[1] + step / 2, step/2});
+        for (int i = 0; i &lt; start_numbers.size(); i++) {
+            startDC(start_numbers.get(i));
+        }
+    }
+}
+</code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Divide_and_Conquer.java" target="_blank" rel="external">源码</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[减而治之]]></title>
       <url>https://danvane.github.io/2017/02/21/Decrease-and-Conquer/</url>
       <content type="html"><![CDATA[<p><em>减而治之(decrease-and-conquer)</em>策略的基础，在于从给定问题的解及其较小规模谜面的解之间找到某种关系。一旦找到，这样的关系就可以自然而然地导向某种<em>递归算法(recursive algorithm)</em>，它可以将问题减少为一系列的、规模越来越小的谜面，直至可以一下子解决为止。</p>
