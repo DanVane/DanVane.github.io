@@ -4,10 +4,12 @@
   
     
     <entry>
-      <title><![CDATA[Divide-and-conquer]]></title>
+      <title><![CDATA[分而治之]]></title>
       <url>https://danvane.github.io/2017/02/22/Divide-and-conquer/</url>
       <content type="html"><![CDATA[<p><strong>分而治之（divide-and-conquer）</strong>策略就是要把一个问题划分为若干较小的子问题（通常具有相同或相关的类型，理想情况下规模也大致一样），然后各个击破，最后在必要时把子问题的解组合起来，就得到了原始问题的解。但是，能够采用分而治之求解的谜题并不多。</p>
 <h3 id="三格骨牌谜题"><a href="#三格骨牌谜题" class="headerlink" title="三格骨牌谜题"></a>三格骨牌谜题</h3><p>使用适当的三格骨牌来覆盖一块缺了一个的\( 2^n * 2^n\)棋盘。所谓三格骨牌就是L形的相邻三格。棋盘上缺的可以是任何一格。三格骨牌必须覆盖除缺格外的全部其它格，且不能有重叠。</p>
+<p><img src="/2017/02/22/Divide-and-conquer/dc.PNG" alt=""></p>
+<a id="more"></a>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>private void startDC(int[] start) {
 
     int step = start[2];
@@ -38,6 +40,12 @@
     }
 }
 </code></pre><p><a href="https://github.com/DanVane/Algorithms/blob/master/Divide_and_Conquer.java" target="_blank" rel="external">源码</a></p>
+<p>该谜题采用递归的分而治之求解。如上图所示，先在棋盘中央放置一块三格骨牌，这样规模为n的问题就变成了各自规模为n-1的四个相同问题。党每个缺了一个的2*2的区域都被算法生成的一块三格骨牌所覆盖时。算法终止。</p>
+<p>大多数分治算法都采用递归求解较小规模的子问题。特别地，有些谜题的子问题未必是相同问题的较小谜面。</p>
+<h3 id="2n筹码问题"><a href="#2n筹码问题" class="headerlink" title="2n筹码问题"></a>2n筹码问题</h3><p>对于任意数值n&gt;1，放置2n个筹码在n*n的棋盘上，要求在同行、同列以及同对角线上的筹码个数不超过2个。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p><a href="">源码</a></p>
+<h3 id="直三格板铺陈"><a href="#直三格板铺陈" class="headerlink" title="直三格板铺陈"></a>直三格板铺陈</h3><p>一个直三格板是一个\(3<em> 1\)的瓦片平铺。很显然，只要n能够被3整除，任何人都能够通过直三格板平铺成一个\(n</em> n\)的正方形。那么。对于一个大于3又不能被3整除的n来说，是否能够利用直三格板和一个叫做单格板的\(1<em> 1\)瓦片平铺，来构成一个\(n</em> n\)的正方形呢？如果可以的话，请解释如何做；如果不行的话，请解释为什么。</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>减而治之和分而治之的区别在于<em>每一步需要解决的子问题个数</em>：分治算法每一步需要解决多个子问题，而减治算法仅需要解决一个。</p>
 ]]></content>
     </entry>
     
